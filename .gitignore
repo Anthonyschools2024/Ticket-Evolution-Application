@@ -1,0 +1,9 @@
+node_modules
+database/events.db
+npm-debug.log
+
+# Environment variables
+.env
+
+# Ignore generated CSS file
+/public/css/output.css

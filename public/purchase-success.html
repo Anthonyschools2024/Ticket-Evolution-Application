@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Purchase Successful - Ticket Evolution</title>
+    <script src="https://js.stripe.com/v3/"></script>
+    <link href="/css/output.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 text-gray-800 font-sans antialiased flex items-center justify-center min-h-screen">
+    <div class="bg-white p-8 md:p-12 rounded-lg shadow-lg text-center max-w-lg">
+        <div class="text-green-500 mb-6"><svg class="w-16 h-16 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg></div>
+        <h1 class="text-2xl md:text-3xl font-bold text-gray-800 mb-4">Payment Successful!</h1>
+        <p class="text-gray-600 mb-8">Thank you for your purchase. Your tickets are confirmed (pending backend fulfillment). You should receive a confirmation email shortly (if implemented).</p>
+        <a href="/" class="inline-block bg-blue-600 text-white px-6 py-3 rounded-full font-semibold hover:bg-blue-700 transition duration-300 shadow-md">Back to Home</a>
+         <p id="session-info" class="text-xs text-gray-400 mt-6"></p>
+         <script>
+             const urlParams = new URLSearchParams(window.location.search); const sessionId = urlParams.get('session_id');
+             if (sessionId) { document.getElementById('session-info').textContent = `Ref: ${sessionId.substring(0, 12)}...`; }
+         </script>
+    </div>
+</body>
+</html>
